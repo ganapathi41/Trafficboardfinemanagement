@@ -1,0 +1,34 @@
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+<%- include('../layouts/header') %>
+<div class="u">
+<h2 >Traffic Rules breakers/offender</h2>
+<br/><br/><br/><br/>
+<% if(count>0) {%>
+<table class="table table-striped">
+    <thread>
+        <tr  class="home">
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>violation</th>
+            <th>Category</th>
+        </tr>
+    </thread>
+    <tbody>
+        <% offenders.forEach(function(offender) {%>
+            <tr >
+                <td><%= offender.name %></td>
+                <td><%= offender.phone %></td>
+                <td><%= offender.violation %></td>
+                <td><%= offender.category %></td>
+                 
+
+            </tr>
+            <% }); %>
+    </tbody>
+</table>
+<%} else {%>
+    <h3 class="text text-center">There are no offenders</h3>
+<% } %>
+</div>
+<%- include('../layouts/footer') %>

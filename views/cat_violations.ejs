@@ -1,0 +1,14 @@
+<%- include('layouts/header'); -%>
+
+<div class="row violations">
+    <% violations.forEach(function(violation){ %>
+       <div id="ch" class="col-xs-12 col-md-4">
+        <a class="va" href="/violations/<%= violation.category %>/<%= violation.slug %>"></a>
+        <h3><%= violation.title %></h3>
+        <h4><%= violation.fine %></h4>
+        <a class="vd" href="/violations/<%= violation.category %>/<%= violation.slug %>">View details</a>
+       </div>
+    <% }); %>
+</div>
+
+<%- include('layouts/footer'); -%>

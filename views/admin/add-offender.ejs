@@ -1,0 +1,49 @@
+<%- include('../layouts/adminheader') %>
+
+<h2 class="page-title">Add an Offender</h2>
+<a href="/admin/offenders" class="btn btn-primary">Back to offenders</a>
+<form method="POST" action="/admin/offenders/add-offender" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for=" ">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Name" value="<%= name %>">
+     </div> 
+     <div class="form-group">
+      <label for=" ">Phone number</label>
+      <input type="number" class="form-control" name="phone" placeholder="phone no.." value="<%= phone %>">
+   </div> 
+      
+     <div class="form-group">
+        <label for=" ">Address</label>
+        <textarea class="form-control" name="addr" placeholder="Address  " cols="20" rows="10"><%= addr %></textarea>
+     </div>  
+     
+      <div class="form-group">
+         <label for=" ">Fine</label>
+         <input type="number" class="form-control" name="fine" placeholder="fine..." value="<%= fine %>">
+      </div> 
+      <div class="form-group">
+         <label for=" ">Vehicle Nummber</label>
+         <input type="number" class="form-control" name="vehno" placeholder="Vehicle no.." value="<%= vehno %>">
+      </div> 
+      <div class="form-group">
+         <label for=" ">Violation</label>
+         <select name="violation" class="form-control">
+            <% violations.forEach(function(vio) {%>
+               <option value="<%= vio.slug %>"><%= vio.title %></option>
+            <% }); %>
+         </select>
+      </div> 
+   <div class="form-group">
+      <label for=" ">Category</label>
+      <select name="category" class="form-control">
+         <% categories.forEach(function(cat) {%>
+            <option value="<%= cat.slug %>"><%= cat.title %></option>
+         <% }); %>
+      </select>
+   </div> 
+   
+  
+    <button class="btn btn-default">Submit</button>
+</form>
+
+<%- include('../layouts/adminfooter') %>

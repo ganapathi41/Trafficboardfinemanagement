@@ -1,0 +1,25 @@
+<%- include('../layouts/adminheader') %>
+
+<h2 >Notice section</h2>
+<a href="/admin/notices/add-notice" >Send a new Notice</a>
+<br/><br/><br/><br/>
+<table class="table table-striped ">
+    <thread>
+        <tr class="home">
+            <th>Name</th>
+            <th>Message Sent</th>
+            <th>Delete</th>
+        </tr>
+    </thread>
+    <tbody>
+        <% notices.forEach(function(not) {%>
+            <tr>
+                <td><%= not.name %></td>
+                <td>yes! </td>>
+                <td><a class="confirmDeletion" href="/admin/notices/delete-notice/<%= not._id %>">Delete</a></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<%- include('../layouts/adminfooter') %>

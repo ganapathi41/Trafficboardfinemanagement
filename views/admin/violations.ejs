@@ -1,0 +1,38 @@
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+<%- include('../layouts/adminheader') %>
+
+<h2 >Traffic Violations</h2>
+<a href="/admin/violations/add-violation" >Add a new violation</a>
+<br/><br/><br/><br/>
+<% if(count>0) {%>
+<table class="table table-striped">
+    <thread>
+        <tr  class="home">
+            <th>Violations</th>
+            <th>fine</th>
+            <th>Category</th>
+            
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thread>
+    <tbody>
+        <% violations.forEach(function(violation) {%>
+            <tr >
+                <td><%= violation.title %></td>
+                <td><%= violation.fine %></td>
+                <td><%= violation.category %></td>
+                 
+     <td><a href="/admin/violations/edit-violation/<%= violation._id %>">Edit</a></td>
+                
+                    <td><a class="confirmDeletion" href="/admin/violations/delete-violation/<%= violation._id %>">Delete</a></td>
+
+            </tr>
+            <% }); %>
+    </tbody>
+</table>
+<%} else {%>
+    <h3 class="text text-center">There is no violation</h3>
+<% } %>
+<%- include('../layouts/adminfooter') %>

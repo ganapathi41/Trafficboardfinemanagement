@@ -1,0 +1,15 @@
+<%- include('layouts/header'); -%>
+
+<div class="row">
+    <h1 class="page-header"><%= violation.title %></h1>
+     <div class="col-xs-12 col-md-7">
+         <h4><%= violation.desc %></h4>
+         <h4><%= violation.fine %></h4>
+         <% if(loggedin) {%>
+            <p><a href="/cart/add/<%= violation.slug %>">Add to checkout</a></p>
+            <%} else {%>
+          <p>You must be logged in to pay fine</p>    
+           <%}%>         
+     </div>
+</div>
+<%- include('layouts/footer'); -%>

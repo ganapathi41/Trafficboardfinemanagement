@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+  
+    <title>admin area</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"> </script>  
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+  </head>
+<body class="ah">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="/" target="_blank">Traffic board</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li >
+        <a class="nav-link" href="/admin/pages">pages <span class="sr-only">(current)</span></a>
+      </li>
+      <li >
+        <a class="nav-link" href="/admin/categories">categories <span class="sr-only">(current)</span></a>
+      </li>
+      <li >
+        <a class="nav-link" href="/admin/violations">Traffic Violations <span class="sr-only">(current)</span></a>
+      </li>
+      <li >
+        <a class="nav-link" href="/admin/offenders">Offenders <span class="sr-only">(current)</span></a>
+      </li>
+      <li >
+        <a class="nav-link" href="/admin/notices">Send message <span class="sr-only">(current)</span></a>
+      </li>
+      <li >
+        <a class="nav-link" href="/users/logout">Hi,<%= user.username %>(Logout)</a>
+      </li>
+ 
+        </div>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+<main role="main" class="container">
+
+<div class="starter-template">
+    <%- messages('messages', locals) %>
+<% if(errors) {%>
+  <% errors.forEach(function(error){ %>
+    <div class="alert alert-danger">
+      <%= error.msg %>
+    </div>
+  <% }); %>
+<% } %>
+
+
+
+

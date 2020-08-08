@@ -1,0 +1,48 @@
+#imgPreview {
+    margin: 20px;
+}
+#ch{
+    margin: 10px;
+
+    border-width: 5px;
+    border-style: solid;
+    
+    
+}
+#p{
+    margin: 10px;
+    border-style: solid;
+    border-width: 5px;
+}
+.c {
+    background-image: url("/images/h.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.u {
+    background-image: url("/images/of.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.ah {
+    background-image: url("/images/tp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-style: oblique;
+    
+}
+.k{
+    font-weight: bolder;
+}
+.l {
+    background-image: url("/images/op.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.pp{
+    position: absolute;
+    left: -3000px;
+}

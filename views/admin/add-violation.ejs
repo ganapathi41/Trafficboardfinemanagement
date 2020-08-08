@@ -1,0 +1,31 @@
+<%- include('../layouts/adminheader') %>
+
+<h2 class="page-title">Add a Violation</h2>
+<a href="/admin/violations" class="btn btn-primary">Back to Violations</a>
+<form method="POST" action="/admin/violations/add-violation" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for=" ">Title</label>
+        <input type="text" class="form-control" name="title" placeholder="title" value="<%= title %>">
+     </div> 
+      
+     <div class="form-group">
+        <label for=" ">Description</label>
+        <textarea class="form-control" name="desc" placeholder="Description" cols="30" rows="10"><%= desc %></textarea>
+     </div>  
+     <div class="form-group">
+      <label for=" ">Category</label>
+      <select name="category" class="form-control">
+         <% categories.forEach(function(cat) {%>
+            <option value="<%= cat.slug %>"><%= cat.title %></option>
+         <% }); %>
+      </select>
+   </div> 
+   <div class="form-group">
+      <label for=" ">Fine</label>
+      <input type="text" class="form-control" name="fine" placeholder="fine" value="<%= fine %>">
+   </div> 
+  
+    <button class="btn btn-default">Submit</button>
+</form>
+
+<%- include('../layouts/adminfooter') %>

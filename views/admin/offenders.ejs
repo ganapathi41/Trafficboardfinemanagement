@@ -1,0 +1,39 @@
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+<%- include('../layouts/adminheader') %>
+
+<h2 >Traffic Rules breakers/offenders</h2>
+<a href="/admin/offenders/add-offender" >Add a new offender</a>
+<br/><br/><br/><br/>
+<% if(count>0) {%>
+<table class="k table table-striped">
+    <thread>
+        <tr  class="home">
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>violation</th>
+            <th>Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thread>
+    <tbody>
+        <% offenders.forEach(function(offender) {%>
+            <tr >
+                <td><%= offender.name %></td>
+                <td><%= offender.phone %></td>
+                <td><%= offender.violation %></td>
+                <td><%= offender.category %></td>
+                 
+     <td><a href="/admin/offenders/edit-offender/<%= offender._id %>">Edit</a></td>
+                
+    <td><a class="confirmDeletion" href="/admin/offenders/delete-offender/<%= offender._id %>">Delete</a></td>
+
+            </tr>
+            <% }); %>
+    </tbody>
+</table>
+<%} else {%>
+    <h3 class="text text-center">There are no offenders</h3>
+<% } %>
+<%- include('../layouts/adminfooter') %>
